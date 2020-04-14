@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 
+import './App.css';
+import backgroundImage from './assets/monte.jpg';
+
 import Header from './components/Header';
 
 function App() {
@@ -11,7 +14,7 @@ function App() {
 
   return (
     <Header title="Rocketseat ReactJS">
-
+      <img src={backgroundImage} width="300" />
       <ul>
         {techs.map((tech) => (
           <li key={tech}>{tech}</li>
