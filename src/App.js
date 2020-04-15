@@ -16,8 +16,14 @@ function App() {
     });
   }, []);
 
-  function handleAddTech() {
-    setTechs([...techs, `Nova tecnologia ${Date.now()}`]);
+  async function handleAddTech() {
+    const response = await api.post('techs', {
+      title: `Nova tecnologia ${Date.now()}`,
+      owner: 'Lucão',
+    });
+    
+    const tech = response.data;
+    setTechs([...techs, tech]);
   }
 
   return (
